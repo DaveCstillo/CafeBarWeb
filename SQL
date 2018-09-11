@@ -1,0 +1,96 @@
+Base de datos del CafeBar
+
+
+
+Bebidas_Frias
+
+CREATE TABLE `id6871932_cafedata`.`Bebidas_Frias` ( `ID` INT NOT NULL AUTO_INCREMENT , `Nombre` VARCHAR(25) NOT NULL , `Imagen` VARCHAR(40) NOT NULL , `Precio` INT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+
+INSERT INTO `Bebidas_Frias`(`Nombre`, `Imagen`, `Precio`) VALUES (,,)
+
+INSERT INTO `Bebidas_Frias`(`Nombre`, `Imagen`, `Precio`) VALUES ("Agave Kiss","agave_kiss.png",40),
+("AkuAku","akuaku.png",50),("Alabama Bushwacker","alabama_bushwacker.png",30),("Alexander", "alexander.png",60),
+("Amaro Spike","amaro_spike.png",20),("Area 51 Shot","area_51_shot.png",50),("Aurora Borealis","aurora_borealis.png",48),("The Incredible Hulk","avengers_incredible_hulk.png",55),
+("Bacon Shot Glasses","bacon_shot_glasses.png",35),("Berry Mojito","berry_mojito.png",35),("Bird Bath","bird_bath.png",60),("BlackBerry Mango Margarita","blackberry_mango_margarita.png",40),
+("Blow Job Shots","blowjob_shots.png",20),("Blue Frog Cocktail","blue_frog_cocktail.png",35),("Blue Jamaican Long Island","blue_jamaican_long_island.png",35),("Blue Lemonade","blue_lemonade.png",40),
+("Blue Magic","blue_magic.png",45),("BlueBerry Mojito","blueberry_mojito.png",45),("Desert Shots","desert_shots.png",15),("Hooker Shots","hooker_shots_2.png",23),
+("Magic 24k","magic_24k.png",45),("Seven Layer Cookie Cocktail","seven_layer_cookie_cocktail.png",35),("Thousand Knife vs Bacardi","thousand_knife_vs_bacardi_151.png",70),("Way to Die #151","way_to_die_no_151.png",35);
+
+
+
+Bebidas_Calientes
+
+CREATE TABLE `id6871932_cafedata`.`Bebidas_Calientes` ( `ID` INT NOT NULL AUTO_INCREMENT , `Nombre` VARCHAR(25) NOT NULL , `Imagen` VARCHAR(40) NOT NULL , `Precio` INT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+
+
+INSERT INTO `Bebidas_Calientes`(`Nombre`, `Imagen`, `Precio`) VALUES ("Cafe Expresso","cafe_1.png",23),("Capuchino","cafe2.png",25),("Arroz en Leche","cafe_3.png",28),("Chocolate sin Leche","chocolate_1.png",35),("Chocolate con Leche","chocolate_2.png",35),("Té con Miel","tea_1.png",25),("Té con Alcohol","tea_alcohol.png",33);
+
+
+
+Entradas
+
+CREATE TABLE `id6871932_cafedata`.`Entradas` ( `ID` INT NOT NULL AUTO_INCREMENT , `Nombre` VARCHAR(25) NOT NULL , `Imagen` VARCHAR(40) NOT NULL , `Precio` INT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+
+
+INSERT INTO `Entradas`(`Nombre`, `Imagen`, `Precio`) VALUES ("Entrada Vegetariana","entrada_1.png",55),("Fajitas","entrada_2.png",35),("Triangulitos de Pollo","entrada_3.png",45),("Dedos de Queso","entrada_4.png",30),("Nachos con Guacamole","entrada_5.png",38),("Bolitas de Pescado","entrada_6.png",50),("Taquitos","entrada_7.png",35),("Aritos de Cebolla","entrada_8.png",35),("Tiras de Pescado","entrada_9.png",45);
+
+
+Comida
+
+
+CREATE TABLE `id6871932_cafedata`.`Comida` ( `ID` INT NOT NULL AUTO_INCREMENT , `Nombre` VARCHAR(25) NOT NULL , `Imagen` VARCHAR(40) NOT NULL , `Precio` INT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+
+
+INSERT INTO `Comida`(`Nombre`, `Imagen`, `Precio`) VALUES ("","",);
+
+
+
+INSERT INTO `Comida`(`Nombre`, `Imagen`, `Precio`) VALUES ("Hamburguesa","comida_1.png",45),("Lasagna Plana","comdia_2.png",50),("Kakiq","comida_3.png",35),("Steak","comida_4.png",60),("Lasagna Gruesa","comida_5.png",45),("Pollo a la Plancha","comida_6.png",35),("Fideos a la Bolognesa","comida_7.png",46),("Pescado","comida_8.png",45),("Papas Fritas","comida_9.png",29),("Lasagna Cuadrada","comida_10.png",30),("Sushi","comida_11.png",50),("Pinchos de Carne","comida_12.png",40),("Costillas","comida_13.png",30),("Bolitas de Papa","comida_14.png",36);
+
+
+
+
+Postres
+
+CREATE TABLE `id6871932_cafedata`.`Postres` ( `ID` INT NOT NULL AUTO_INCREMENT , `Nombre` VARCHAR(25) NOT NULL , `Imagen` VARCHAR(40) NOT NULL , `Precio` INT NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+
+
+INSERT INTO `Postres`(`Nombre`, `Imagen`, `Precio`) VALUES (,,);
+
+
+INSERT INTO `Postres`(`Nombre`, `Imagen`, `Precio`) VALUES ("Pie de Queso","pastel1.png",35),("Helado de Vainilla","pastel2.png",25),("Muffins","pastel3.png",15),("Flan","pastel4.png",10),("Pastelico","pastel5.png",40),("Alfajores","pastel6.png",5),("Pie de Calabaza","pastel7.png",35),("Pie de Manzana","pastel8.png",25),("Helado con Fresas","pastel9.png",50),("Un raro Panque","pastel10.png",35);
+
+
+
+Categorias
+
+CREATE TABLE `id6871932_cafedata`.`Categorias` ( `ID` INT NOT NULL AUTO_INCREMENT , `Nombre` VARCHAR(30) NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
+
+INSERT INTO `Categorias`(`Nombre`) VALUES ("Entradas"),("Comida"),("Bebidas Frias"),("Bebidas Calientes"),("Postres");
+
+
+Mesas
+
+CREATE TABLE `id6871932_cafedata`.`Mesas` ( `ID` INT NOT NULL AUTO_INCREMENT , `No_Mesa` INT NOT NULL , `Status` VARCHAR(20) NOT NULL , `Codigo_Orden` INT NOT NULL , PRIMARY KEY (`ID`), UNIQUE `No_Mesa` (`No_Mesa`), UNIQUE `Codigo_Orden` (`Codigo_Orden`)) ENGINE = InnoDB;
+
+
+
+Ordenes
+
+CREATE TABLE `id6871932_cafedata`.`Ordenes` ( `ID` INT NOT NULL AUTO_INCREMENT , `No_Orden` INT NOT NULL , `Codigo_Orden` INT NOT NULL , `Status` VARCHAR(20) NOT NULL , `Orden` VARCHAR(50) NOT NULL , PRIMARY KEY (`ID`), UNIQUE `No_Orden` (`No_Orden`)) ENGINE = InnoDB;
+
+
+
+		echo "------Bloque de actuale------<br>";
+		print_r($actuale);
+		echo "<br>";
+		echo $actuale["ID"]."<br>";
+		$prod_prev["No_Cuenta"] = $actuale["No_Cuenta"]."<br>";
+		$prod_prev["Comida"] = $actuale["Comida"]."<br>";
+		$prod_prev["Cantidad"] = $actuale["Cantidad"]."<br>";
+		echo "------Fin del bloque---------<br>";
+
+		$arr_prod_prev[$actuale["ID"]][] =$prod_prev;
+		echo "-----Array prodd previo------<br>";
+		print_r($arr_prod_prev);
+		echo "<br>------------------------------<br>";
